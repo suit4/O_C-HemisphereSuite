@@ -37,5 +37,8 @@
 // This uses approximately 640 additional bytes of program storage space
 #define HEM_LOGARHYTHM_MOD_SCALES
 
+// Define this to enable the BigScope App
+#define ENABLE_APP_BIG_SCOPE
+
 #endif
 
