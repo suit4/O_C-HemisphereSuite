@@ -42,6 +42,9 @@ OC::App available_apps[] = {
   #ifdef ENABLE_APP_DARKEST_TIMELINE
     DECLARE_APP('D','2', "Darkest Timeline", TheDarkestTimeline),
   #endif
+  #ifdef ENABLE_APP_BIG_SCOPE
+    DECLARE_APP('B','S', "Scope", BigScope),
+  #endif
   DECLARE_APP('E','N', "Enigma", EnigmaTMWS),
   DECLARE_APP('N','N', "Neural Net", NeuralNetwork),
   DECLARE_APP('S','C', "Scale Editor", SCALEEDITOR),
