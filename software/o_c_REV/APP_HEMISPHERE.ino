@@ -81,6 +81,8 @@ public:
         help_hemisphere = -1;
         clock_setup = 0;
 
+        OC::DAC::set_all_octave(0); // PR fix for initializing all channels to 0 when Capt. MIDI is not present (From Qiemem a1e3cf437ae8534534c3525615cfb90108fef131 )
+
         SetApplet(0, get_applet_index_by_id(8)); // ADSR
         SetApplet(1, get_applet_index_by_id(26)); // Scale Duet
     }
@@ -93,7 +95,6 @@ public:
             uint32_t data = (values_[4 + h] << 16) + values_[2 + h];
             available_applets[index].OnDataReceive(h, data);
         }
-        ClockSetup.OnDataReceive(0, uint32_t(values_[HEMISPHERE_CLOCK_DATA]));
     }
 
     void SetApplet(int hemisphere, int index) {

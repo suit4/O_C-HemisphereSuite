@@ -41,6 +41,20 @@ public:
         }
 
         if (Clock(0) && !Gate(1)) {
+        
+            // Triplets: Track what triplet timing should be to span 4 normal clocks
+            triplet_time = (ClockCycleTicks(0) * 4) / 3;
+            if(triplet_which == 0)
+            {
+              next_trip_trigger = tick;  // Trigger right now (downbeat)
+            }
+            
+            if(++triplet_which > 3)
+            {
+              triplet_which = 0;        
+            }
+            
+            // Swing
             which = 1 - which;
             if (last_tick) {
                 tempo = tick - last_tick;
